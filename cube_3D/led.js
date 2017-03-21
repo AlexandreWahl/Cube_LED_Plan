@@ -3,8 +3,8 @@ function Led(x, y, z) {
     this.y = y;
     this.z = z;
     this.color = "white";
-    this.radius = 0.5;
-    this.size = 10;
+    this.radius = 0.3;
+    this.size = 5;
     this.sphere = "";
     this.opacity = 0.10;
     this.isOff = true;

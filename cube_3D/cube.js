@@ -1,17 +1,17 @@
 var camera, scene, renderer, controls, axes;
-// var w = window.innerWidth;
-// var h = window.innerHeight;
 var w = 1000;
 var h = 1000;
-var size = 40;
-// var number = 13;
+var size = 35;
 var leds = "";
+var number = 0;
 
 function getNumber() {
     return number;
 }
 
-function init(number) {
+function init(nb) {
+    number = nb;
+
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(50, w / h, 1, 10000);
     camera.position.set(19.7, 37.7, 90.5).setLength(100);

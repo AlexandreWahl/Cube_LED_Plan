@@ -1,72 +1,62 @@
-var number = 13;
-var candyColor = "red";
-var statusShowAxes = false;
+var number = 12;
 var statusRotation = false;
-var lastKey = 0;
-var food = {};
+var statusShowAxes = false;
 
 init(number);
 animate();
-foodLocation();
 
-var snake = new Snake("blue", "green", number, candyColor);
-snake.show();
+var A = {
+    x : 1,
+    y : 4,
+    z : 8
+};
 
-var timer = setInterval(function() {
-    draw();
-}, snake.getMoveSpeed());
+var B = {
+    x : 1,
+    y : 2,
+    z : 4
+};
 
-function draw() {
-    if(snake.eat(food)) {
-        foodLocation();
-        snake.setMoveSpeed(snake.getMoveSpeed() - 10);
-    }
-    snake.death();
-    if(snake.getIsDead()) {
-        clearInterval(timer);
-    } else {
-        snake.update();
-        $("#score").text("SCORE : " + snake.getSize() * (1000 - snake.getMoveSpeed()));
-        setLedColor(food.x, food.y, food.z, candyColor);
+var C = {
+    x : 5,
+    y : 2,
+    z : 4
+};
+
+
+var u = {
+    x : B.x - A.x,
+    y : B.y - A.y,
+    z : B.z - A.z
+};
+
+var v = {
+    x : C.x - A.x,
+    y : C.y - A.y,
+    z : C.z - A.z
+};
+
+var afterCross = {
+    a : u.y * v.z - u.z * v.y,
+    b : u.z * v.x - u.x * v.z,
+    c : u.x * v.y - u.y * v.x
+};
+
+var d = -(afterCross.a * A.x + afterCross.x * A.y + afterCross.c * A.z);
+
+console.log(d);
+
+var equation = afterCross.a
+
+for(var i = 0;i < number;i++) {
+    for(var j = 0;j < number;j++) {
+
     }
 }
 
-$(window).keypress(function(e) {
-    var dir = snake.getDirection();
-    if (dir.z == 1)
-        lastKey = 115;
-    else if (dir.z == -1)
-        lastKey = 119;
-    else if (dir.x == 1)
-        lastKey = 100;
-    else if (dir.x == -1)
-        lastKey = 97;
-    else if (dir.y == 1)
-        lastKey = 117;
-    else if (dir.y == 1)
-        lastKey = 104;
 
-    if(e.which == 119 && lastKey != 115) { // W
-        snake.direction(0, 0, -1);
-        lastKey = e.which;
-    } else if(e.which == 115 && lastKey != 119) { // S
-        snake.direction(0, 0, 1);
-        lastKey = e.which;
-    } else if(e.which == 100 && lastKey != 97) { // D
-        snake.direction(1, 0, 0);
-        lastKey = e.which;
-    } else if(e.which == 97 && lastKey != 100) { // A
-        snake.direction(-1, 0, 0);
-        lastKey = e.which;
-    } else if(e.which == 117 && lastKey != 104) { // U
-        snake.direction(0, 1, 0);
-        lastKey = e.which;
-    } else if(e.which == 104 && lastKey != 117) { // H
-        snake.direction(0, -1, 0);
-        lastKey = e.which;
-    }
 
-});
+
 
 // Fonction permettant d'obtenir le statut de l'affichage des axes
 function getRotationStatus() {
@@ -123,11 +113,4 @@ function turnOffAllLeds() {
             }
         }
     }
-}
-
-// TODO
-function foodLocation() {
-    food.x = Math.floor((Math.random() * number) + 1) -1;
-    food.y = Math.floor((Math.random() * number) + 1) -1;
-    food.z = Math.floor((Math.random() * number) + 1) -1;
 }
