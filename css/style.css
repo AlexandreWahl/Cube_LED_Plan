@@ -1,0 +1,32 @@
+/*some basic reset*/
+* {margin: 0; padding: 0;}
+body {
+    margin: 0;
+    background-color: #5d6168;
+}
+canvas {
+    display: block;
+    background: black;
+    width: 100%;
+    height: 100%
+}
+
+#checkAxes {
+    position : absolute;
+    margin-left : 25px;
+    margin-top : 25px;
+}
+
+#checkRotation {
+    position : absolute;
+    margin-left : 50px;
+    margin-top : 25px;
+}
+
+#score {
+    position : absolute;
+    margin-left : 80px;
+    margin-top : 20px;
+    font-size: 25px;
+    font-family: "Lucida Console";
+}

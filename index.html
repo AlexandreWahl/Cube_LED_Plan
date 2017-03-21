@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="Cube LED v.1">
+		<meta name="date" content="06.12.2016">
+		<meta name="author" content="Alexandre Wahl">
+		<meta name="version" content="1.0">
+
+        <!-- -->
+		<link rel="stylesheet" href="css/style.css" />
+        <title>Cube LED 3D</title>
+
+        <!-- -->
+        <script src="js/functions.js" defer></script>
+        <script src="js/snake.js" defer></script>
+        <script src="js/index.js" defer></script>
+        <script src="lib/jquery-3.1.1.min.js"></script>
+        <script src="lib/three.js"></script>
+        <script src="lib/OrbitControls.js"></script>
+
+        <!-- -->
+		<script src="cube_3D/led.js"></script>
+		<script src="cube_3D/cube.js"></script>
+		<script src="cube_3D/fonctionsCube.js"></script>
+    </head>
+	<body>
+        <div><input id="checkAxes" type="checkbox" value="0" onclick="checkAxes(this.checked)"></div>
+        <div><input id="checkRotation" type="checkbox" value="0" onclick="checkRotation(this.checked)"></div>
+        <div id="score">SCORE : 0</div>
+	</body>
+</html>
