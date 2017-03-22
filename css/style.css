@@ -11,6 +11,28 @@ canvas {
     height: 100%
 }
 
+#table {
+    position : absolute;
+    margin-left : 100px;
+    margin-top : 25px;
+    border-collapse: collapse;
+    width : 240px;
+    height : 120px;
+}
+
+tr {
+    width : 20px;
+}
+
+td {
+    border-radius: 20px;
+    height : 20px;
+}
+
+tr, td {
+    border: 1px solid black;
+}
+
 #checkAxes {
     position : absolute;
     margin-left : 25px;
@@ -29,4 +51,10 @@ canvas {
     margin-top : 20px;
     font-size: 25px;
     font-family: "Lucida Console";
+}
+
+#confirmPlan {
+    position : absolute;
+    margin-left : 400px;
+    margin-top : 25px;
 }
