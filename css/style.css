@@ -58,3 +58,15 @@ tr, td {
     margin-left : 400px;
     margin-top : 25px;
 }
+
+#confirmSphere {
+    position : absolute;
+    margin-left : 500px;
+    margin-top : 25px;
+}
+
+#equation {
+    position : absolute;
+    margin-left : 400px;
+    margin-top : 50px;
+}
